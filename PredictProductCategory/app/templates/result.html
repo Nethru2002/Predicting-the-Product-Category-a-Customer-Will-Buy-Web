@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card text-center p-4 shadow-sm">
+  <h2 class="mb-4 text-success">✅ Prediction</h2>
+  <p>Segment: <strong>Cluster {{ cluster }}</strong></p>
+  <h4 class="text-primary">{{ category }}</h4>
+  <a href="/" class="btn btn-outline-primary mt-3">Try Another</a>
+</div>
+
+<div class="card mt-4 p-4 shadow-sm">
+  <h5>📊 Cluster Distribution</h5>
+  <canvas id="clusterChart" height="200"></canvas>
+</div>
+
+<script>
+  const ctx = document.getElementById('clusterChart').getContext('2d');
+  const clusterChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: {{ cluster_labels | safe }},
+      datasets: [{
+        data: {{ cluster_counts | safe }},
+        backgroundColor: ['#007bff', '#28a745', '#ffc107']
+      }]
+    },
+    options: { responsive: true }
+  });
+</script>
+{% endblock %}

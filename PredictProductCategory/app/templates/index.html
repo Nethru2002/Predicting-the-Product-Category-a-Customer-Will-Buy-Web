@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card p-4 shadow-sm">
+  <h2 class="text-center mb-4">Customer Details</h2>
+  <form method="post" action="/predict">
+    <div class="mb-3"><label>Age</label><input type="number" name="age" class="form-control" required /></div>
+    <div class="mb-3"><label>Gender</label><select name="gender" class="form-select"><option value="0">Male</option><option value="1">Female</option></select></div>
+    <div class="mb-3"><label>Purchase Amount</label><input type="number" step="any" name="purchase_amount" class="form-control" required /></div>
+    <div class="mb-3"><label>Review Rating</label><input type="number" step="0.1" name="review_rating" class="form-control" required /></div>
+    <div class="mb-3"><label>Shopping Experience</label><input type="number" name="shopping_experience" class="form-control" required /></div>
+    <div class="mb-3"><label>Subscription Status</label><select name="subscription_status" class="form-select"><option value="0">No</option><option value="1">Yes</option></select></div>
+    <div class="mb-3"><label>Discount Applied</label><select name="discount_applied" class="form-select"><option value="0">No</option><option value="1">Yes</option></select></div>
+    <button type="submit" class="btn btn-primary w-100">Predict Now</button>
+  </form>
+</div>
+
+{% if error_message %}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toastHTML = `
+      <div class="toast align-items-center text-bg-danger border-0" role="alert">
+        <div class="d-flex">
+          <div class="toast-body">
+            {{ error_message }}
+          </div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+      </div>`;
+    document.getElementById('toastContainer').innerHTML = toastHTML;
+    const toast = new bootstrap.Toast(document.querySelector('.toast'));
+    toast.show();
+  });
+</script>
+{% endif %}
+{% endblock %}

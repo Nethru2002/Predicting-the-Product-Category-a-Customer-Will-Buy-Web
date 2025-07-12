@@ -1,0 +1,41 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f8f9fa;
+}
+
+header {
+  background: linear-gradient(135deg, #4a90e2, #007bff);
+}
+
+header h1 {
+  margin: 0;
+  font-weight: 600;
+}
+
+footer {
+  background: #007bff;
+  color: #fff;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+}
+
+.card {
+  border: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.btn-primary {
+  background: #007bff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}

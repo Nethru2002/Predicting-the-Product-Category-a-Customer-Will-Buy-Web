@@ -1,0 +1,11 @@
+Age,Gender,Purchase_Amount,Review_Rating,Shopping_Experience,Subscription_Status,Discount_Applied,Product_Category
+25,Male,120.5,4.2,5,Yes,No,Electronics
+32,Female,250.0,3.8,10,No,Yes,Clothing
+40,Male,520.0,4.9,20,Yes,Yes,Furniture
+29,Female,75.0,2.5,2,No,No,Clothing
+50,Male,1000.0,5.0,50,Yes,Yes,Electronics
+36,Female,350.0,4.0,15,No,Yes,Furniture
+28,Male,200.0,3.5,8,Yes,No,Clothing
+45,Female,800.0,4.8,40,Yes,Yes,Electronics
+38,Male,400.0,4.1,12,No,Yes,Furniture
+30,Female,150.0,3.0,4,No,No,Clothing
